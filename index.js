@@ -21,7 +21,7 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 
 // Connect to MongoDB
-connectMOngoDb("mongodb://127.0.0.1:27017/myapp");
+connectMOngoDb();
 
 
 // Middleware - Plugin
