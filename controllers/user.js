@@ -29,7 +29,7 @@ async function handleDeleteUserById(req, res){
 // PUT Method
 async function handlePutUserById(req, res){
     const result = await User.findByIdAndUpdate(req.params.id, req.body, { new: true })
-    return res.json(user);
+    return res.json({ Msg: "User Updated", user: result });
 }
 
 async function handleCreateNewUser(req, res) {
