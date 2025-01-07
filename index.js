@@ -20,13 +20,13 @@ const swaggerDocument = YAML.load("./docs/swagger.yaml");
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // CORS Configuration
-const corsOptions = {
-    origin: ['http://localhost:3001'], // Allow requests from your frontend's origin
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allowed HTTP methods
-    allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
-  };
+// const corsOptions = {
+//     origin: ['http://localhost:3001'], // Allow requests from your frontend's origin
+//     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allowed HTTP methods
+//     allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
+//   };
   
-  app.use(cors(corsOptions));
+//   app.use(cors(corsOptions));
   app.use(cors({ origin: '*' }));
 
 
