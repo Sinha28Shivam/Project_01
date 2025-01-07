@@ -4,7 +4,7 @@ const userRouter = require("./routes/user");
 const { logReqRes } = require("./middlewares");
 const swaggerUi = require("swagger-ui-express");
 const YAML = require("yamljs");
-
+const cors = require('cors');
 
 
 
@@ -18,6 +18,15 @@ const swaggerDocument = YAML.load("./docs/swagger.yaml");
 
 // Swagger UI setup
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
+// CORS Configuration
+const corsOptions = {
+    origin: ['http://localhost:3001'], // Allow requests from your frontend's origin
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allowed HTTP methods
+    allowedHeaders: ['Content-Type', 'Authorization'], // Allowed headers
+  };
+  
+  app.use(cors(corsOptions));
 
 
 // Connect to MongoDB
