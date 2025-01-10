@@ -1,9 +1,13 @@
 const express = require('express');
-const { handleUserSignup } = require('../controllers/userlogin');
+const { handleUserSignup, handleGetAllRegistardUser } = require('../controllers/userlogin');
 const router = express.Router();
 
+// POST /login
+router.post("/", handleUserSignup)
+// .post(handleUserSignup)
 
-router.post('/login', handleUserSignup);
+// GET /login
+router.get("/registerUser", handleGetAllRegistardUser)
 
 
 // Load User model
