@@ -42,10 +42,11 @@ connectMOngoDb();
 // Middleware - Plugin
 app.use(express.urlencoded({ extended: true }));
 app.use(logReqRes("log.txt"));
-app.use("/user", userRouter);
+
 
 
 //Routes
+app.use("/user", userRouter);
 app.use("/login", userRoute);
 
 
