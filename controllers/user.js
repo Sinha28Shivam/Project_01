@@ -32,6 +32,7 @@ async function handlePutUserById(req, res){
     return res.json({ Msg: "User Updated", user: result });
 }
 
+// POST Method
 async function handleCreateNewUser(req, res) {
     const body = req.body;
 

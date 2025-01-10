@@ -1,9 +1,13 @@
+require('dotenv').config();
 const express = require("express");
 const { connectMOngoDb } = require("./connection");
 const userRouter = require("./routes/user");
+const userRoute = require("./routes/userlogin")
 const { logReqRes } = require("./middlewares");
 const swaggerUi = require("swagger-ui-express");
 const YAML = require("yamljs");
+
+
 const cors = require('cors');
 
 
@@ -11,7 +15,7 @@ const cors = require('cors');
 
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 8000;
 
 // Load the Swagger YAML file
 const swaggerDocument = YAML.load("./docs/swagger.yaml");
@@ -38,11 +42,11 @@ connectMOngoDb();
 // Middleware - Plugin
 app.use(express.urlencoded({ extended: true }));
 app.use(logReqRes("log.txt"));
-
+app.use("/user", userRouter);
 
 
 //Routes
-app.use("/users", userRouter);
+app.use("/login", userRoute);
 
 
 
