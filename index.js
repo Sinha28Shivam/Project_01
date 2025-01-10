@@ -5,7 +5,7 @@ const { logReqRes } = require("./middlewares");
 const swaggerUi = require("swagger-ui-express");
 const YAML = require("yamljs");
 
-
+const userRoute = require("./routes/userlogin")
 
 
 
@@ -27,11 +27,11 @@ connectMOngoDb("mongodb://127.0.0.1:27017/myapp");
 // Middleware - Plugin
 app.use(express.urlencoded({ extended: true }));
 app.use(logReqRes("log.txt"));
-
+app.use("/user", userRouter);
 
 
 //Routes
-app.use("/users", userRouter);
+app.use("/login", userRoute);
 
 
 
