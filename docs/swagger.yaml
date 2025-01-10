@@ -4,8 +4,8 @@ info:
   description: API for managing users including CRUD operations.
   version: 1.0.0
 servers:
-  - url: http://localhost:3000/api
-    description: Development Server
+  - url: http://localhost:5000/api  # Custom port (5000) instead of 3000
+    description: Development Server with custom port
 paths:
   /users:
     get:
@@ -20,7 +20,6 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/User'
-
     post:
       summary: Create a new user
       operationId: createUser
@@ -42,7 +41,6 @@ paths:
                     type: string
                   id:
                     type: string
-
   /users/{id}:
     get:
       summary: Get a user by ID
@@ -62,7 +60,6 @@ paths:
                 $ref: '#/components/schemas/User'
         '404':
           description: User not found
-
     patch:
       summary: Update a user by ID
       operationId: updateUserById
@@ -90,7 +87,6 @@ paths:
                     type: string
                   user:
                     $ref: '#/components/schemas/User'
-
     delete:
       summary: Delete a user by ID
       operationId: deleteUserById
@@ -112,7 +108,6 @@ paths:
                     type: string
                   user:
                     $ref: '#/components/schemas/User'
-
     put:
       summary: Replace a user by ID
       operationId: replaceUserById
@@ -141,6 +136,58 @@ paths:
                   user:
                     $ref: '#/components/schemas/User'
 
+  # Login Path
+  /login:
+    post:
+      summary: Login an existing user
+      operationId: loginUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginUser'
+      responses:
+        '200':
+          description: User logged in successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Msg:
+                    type: string
+                  token:
+                    type: string
+        '401':
+          description: Invalid credentials
+
+  # Register User Path under /login
+  /login/registerUser:
+    post:
+      summary: Register a new user
+      operationId: registerUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewUser'
+      responses:
+        '201':
+          description: User registered successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Msg:
+                    type: string
+                  id:
+                    type: string
+        '400':
+          description: Invalid user data
+
 components:
   schemas:
     User:
@@ -148,7 +195,7 @@ components:
       properties:
         _id:
           type: string
-        firstName:
+        name:
           type: string
         lastName:
           type: string
@@ -191,4 +238,15 @@ components:
         gender:
           type: string
         job_title:
+          type: string
+
+    LoginUser:
+      type: object
+      required:
+        - email
+        - password
+      properties:
+        email:
+          type: string
+        password:
           type: string
