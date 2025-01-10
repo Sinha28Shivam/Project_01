@@ -134,3 +134,81 @@
 1736521723074:POST: / - ::1
 
 1736521752970:POST: /user/ - ::1
+
+1736530007139:POST: /login - ::1
+
+1736530175303:POST: /login - ::1
+
+1736530311379:GET: /user - ::1
+
+1736530345401:GET: /login/registerUser - ::1
+
+1736530368092:GET: /login/registerUser - ::1
+
+1736530407588:GET: /login/login - ::1
+
+1736530425768:GET: /login/sign-in - ::1
+
+1736530990481:GET: /login/sign-in - ::1
+
+1736532206830:GET: /login/sign-in - ::1
+
+1736532216403:GET: /sign-in - ::1
+
+1736532244892:GET: /login/admin - ::1
+
+1736532249163:GET: /login/admin/user - ::1
+
+1736532278664:GET: /login/admin/user - ::1
+
+1736532938011:POST: /login/sign-in - ::1
+
+1736533008977:POST: /login/sign-in - ::1
+
+1736533074910:POST: /login/sign-in - ::1
+
+1736533079877:POST: /login/sign-in - ::1
+
+1736533084219:POST: /login/sign-in - ::1
+
+1736533088381:POST: /login/sign-in - ::1
+
+1736533108212:POST: /login/sign-in - ::1
+
+1736533183117:POST: /login - ::1
+
+1736533188343:GET: /login/admin/user - ::1
+
+1736533241685:POST: /login/sign-in - ::1
+
+1736533279969:POST: /login/sign-in - ::1
+
+1736533285647:POST: /login/sign-in - ::1
+
+1736533293700:POST: /login/sign-in - ::1
+
+1736533298853:POST: /login/sign-in - ::1
+
+1736533333127:POST: /login/sign-in - ::1
+
+1736533428837:POST: /login/user/sign-in - ::1
+
+1736533436410:POST: /login/user/sign-in - ::1
+
+1736533776503:POST: /login/user/sign-in - ::1
+
+1736533780313:GET: /login/admin/user - ::1
+
+1736533812179:POST: /login - ::1
+
+1736533832685:POST: /login/user/sign-in - ::1
+
+1736533837778:POST: /login/user/sign-in - ::1
+
+1736533843768:POST: /login/user/sign-in - ::1
+
+1736533881977:GET: /luser/678167349c6c8cddd170ea5e - ::1
+
+1736533886340:GET: /user/678167349c6c8cddd170ea5e - ::1
+
+1736533897332:GET: /user/ - ::1
